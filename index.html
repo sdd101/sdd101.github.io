@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مؤسسة أحمد دخيل الموسى</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #c8a24a;
+      --gold-light: #e6c977;
+      --dark: #0e1526;
+      --dark-2: #16203a;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(200, 162, 74, 0.28);
+      --text: #f3f4f8;
+      --muted: #b9c0d0;
+      --wa: #25d366;
+    }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 0%, #1c2848 0%, var(--dark) 55%, #0a0f1d 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* زخارف خلفية ناعمة */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.35;
+      z-index: 0;
+    }
+    body::before { width: 340px; height: 340px; background: #c8a24a; top: -120px; left: -80px; }
+    body::after { width: 300px; height: 300px; background: #2a5cff; bottom: -120px; right: -80px; opacity: 0.25; }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 500px;
+      background: linear-gradient(160deg, rgba(22, 32, 58, 0.9), rgba(14, 21, 38, 0.92));
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 40px 26px 32px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      animation: rise 0.7s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* الشعار / الحرف */
+    .logo {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--gold-light), var(--gold));
+      color: var(--dark);
+      font-size: 42px;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(200, 162, 74, 0.4);
+      border: 3px solid rgba(255, 255, 255, 0.25);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, var(--gold-light), #fff, var(--gold-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+      letter-spacing: 1px;
+    }
+
+    .divider {
+      width: 70px;
+      height: 3px;
+      margin: 20px auto 26px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .section-title {
+      text-align: right;
+      font-size: 15px;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin: 4px 4px 12px;
+    }
+
+    /* بطاقة رقم */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .contact-row:hover { transform: translateY(-2px); border-color: var(--card-border); }
+
+    .contact-info {
+      flex: 1;
+      text-align: right;
+    }
+    .contact-info .label { font-size: 13px; color: var(--muted); }
+    .contact-info .num {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      direction: ltr;
+      unicode-bidi: plaintext;
+      color: #fff;
+    }
+
+    .actions { display: flex; gap: 8px; }
+
+    .btn {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      color: #fff;
+    }
+    .btn:hover { transform: scale(1.08); }
+    .btn svg { width: 22px; height: 22px; }
+
+    .btn-call { background: linear-gradient(145deg, #3a4a75, #2a375c); box-shadow: 0 6px 16px rgba(0,0,0,0.35); }
+    .btn-wa { background: linear-gradient(145deg, #2ce670, var(--wa)); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35); }
+
+    /* روابط سفلية */
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .social:hover { transform: translateY(-3px); filter: brightness(1.1); }
+    .social svg { width: 22px; height: 22px; }
+
+    .s-map { background: linear-gradient(145deg, #ea4335, #c5221f); box-shadow: 0 8px 20px rgba(234,67,53,0.3); }
+    .s-snap { background: linear-gradient(145deg, #fffc00, #f7e600); color: #1a1a1a; box-shadow: 0 8px 20px rgba(247,230,0,0.3); }
+    .s-tiktok { background: linear-gradient(145deg, #2b2b2b, #000); box-shadow: 0 8px 20px rgba(0,0,0,0.4); grid-column: 1 / -1; }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 380px) {
+      .card { padding: 32px 18px 26px; }
+      h1 { font-size: 22px; }
+      .contact-info .num { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">أ</div>
+    <h1>مؤسسة أحمد دخيل الموسى</h1>
+    <p class="subtitle">للزينة وقطع الغيار</p>
+    <div class="divider"></div>
+
+    <h2 class="section-title">📞 طرق التواصل</h2>
+
+    <!-- محل الزينة -->
+    <div class="contact-row">
+      <div class="actions">
+        <a class="btn btn-call" href="tel:0541234727" aria-label="اتصال">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/966541234727" target="_blank" rel="noopener" aria-label="واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.2-4.4-4-4.5-4.2-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        </a>
+      </div>
+      <div class="contact-info">
+        <div class="label">محل الزينة</div>
+        <div class="num">0541234727</div>
+      </div>
+    </div>
+
+    <!-- محل قطع الغيار -->
+    <div class="contact-row">
+      <div class="actions">
+        <a class="btn btn-call" href="tel:0534230707" aria-label="اتصال">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/966534230707" target="_blank" rel="noopener" aria-label="واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9-2.7-1.2-4.4-4-4.5-4.2-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        </a>
+      </div>
+      <div class="contact-info">
+        <div class="label">محل قطع الغيار</div>
+        <div class="num">0534230707</div>
+      </div>
+    </div>
+
+    <!-- روابط التواصل -->
+    <div class="social-grid">
+      <a class="social s-map" href="https://maps.app.goo.gl/LbaLGWrTJkfFtH9Y9?g_st=iw" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        الموقع
+      </a>
+      <a class="social s-snap" href="https://snapchat.com/t/M9RmdB7v" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.5 0 4.3 1.9 4.4 4.4 0 .6 0 1.4-.1 2.2.3.2.7.2 1 .1.2 0 .8-.2 1.1.3.2.4-.1.8-.9 1.1-.2.1-.6.2-.9.4-.5.3-.3.9.3 1.7.6.9 1.6 1.8 2.8 2.2.4.1.4.5.1.8-.5.5-1.6.7-2.2.8-.2 0-.3.2-.3.4-.1.4-.1.7-.5.8-.5.1-1.2-.1-2.1 0-.6.1-1.1.6-1.9 1-.7.4-1.5.6-2.3.6s-1.6-.2-2.3-.6c-.8-.4-1.3-.9-1.9-1-.9-.1-1.6.1-2.1 0-.4-.1-.4-.4-.5-.8 0-.2-.1-.4-.3-.4-.6-.1-1.7-.3-2.2-.8-.3-.3-.3-.7.1-.8 1.2-.4 2.2-1.3 2.8-2.2.6-.8.8-1.4.3-1.7-.3-.2-.7-.3-.9-.4-.8-.3-1.1-.7-.9-1.1.3-.5.9-.3 1.1-.3.3.1.7.1 1-.1-.1-.8-.1-1.6-.1-2.2C7.7 3.9 9.5 2 12 2z"/></svg>
+        سناب شات
+      </a>
+      <a class="social s-tiktok" href="https://vt.tiktok.com/ZSXyJNbYW/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2c.3 2.1 1.5 3.6 3.5 3.8v2.4c-1.2.1-2.3-.3-3.5-1v6.6c0 4.2-3.4 6.9-6.9 5.9-2.6-.7-4-3.1-3.6-5.6.4-2.3 2.4-4 4.8-4 .3 0 .6 0 .9.1v2.6c-.3-.1-.6-.2-.9-.2-1.3 0-2.3 1.1-2.1 2.4.1 1 1 1.8 2 1.8 1.2 0 2.1-.9 2.1-2.1V2h3.2z"/></svg>
+        تيك توك
+      </a>
+    </div>
+
+    <p class="footer">© مؤسسة أحمد دخيل الموسى · جميع الحقوق محفوظة</p>
+  </main>
+</body>
+</html>
