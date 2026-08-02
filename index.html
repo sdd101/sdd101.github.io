@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#da212f" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="date=no, address=no, email=no" />
   <title>مؤسسة أحمد دخيل الموسى</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -128,6 +130,17 @@
       text-align: right;
     }
     .contact-info .label { font-size: 13px; color: var(--yellow-soft); font-weight: 700; }
+    /* منع سفاري بالجوال من تلوين الأرقام بالأزرق */
+    .contact-info .num a,
+    .contact-info .num a:link,
+    .contact-info .num a:visited,
+    .contact-info .num a:hover,
+    .contact-info .num a:active {
+      color: #fff !important;
+      text-decoration: none !important;
+      -webkit-text-fill-color: #fff;
+    }
+
     .contact-info .num {
       font-size: 20px;
       font-weight: 800;
